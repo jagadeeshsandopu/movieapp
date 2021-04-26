@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/header'
+import Add from './components/add'
+import Watched from './components/watched'
+import Watchlist from './components/watchlist'
+import {BrowserRouter} from 'react-router-dom';
+import {Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
+import {Globalprovider} from './components/context/globalstate'
+
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <Globalprovider>
+    <div>
+     <BrowserRouter>
+      <Header/>
+      <Switch>
+        <Route exact path="/"><Watchlist/></Route>
+        <Route exact path="/watched"><Watched/></Route>
+        <Route exact path="/add"><Add/></Route>
+      </Switch>
+     </BrowserRouter>
     </div>
+  </Globalprovider>
   );
 }
 
