@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import Resultcard from './resultcard';
+import './add.css'
 
 const Add = () => {
    const [searchedmovie,setmovie] = useState("");
@@ -17,10 +18,9 @@ const Add = () => {
   }
 
    return(
-        <div>
-          <input type ="text" placeholder="Search a movie" value={searchedmovie} onChange={search}
-           style={{ width :"50%" , textAlign:"center",height: 20,marginLeft:"25%"}}/>
-          <ul>
+        <div className="add">
+          <input className="search" type ="text" placeholder="Search a movie" value={searchedmovie} onChange={search} />
+          <ul className="list">
             {
              results.map((movie)=>(
               <li key={movie.id}><Resultcard movie={movie} /></li>
