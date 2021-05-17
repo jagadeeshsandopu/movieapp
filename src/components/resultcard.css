@@ -6,7 +6,9 @@
     margin-left:-40px;
      
 }
-
+img {
+    border-radius: 10px;
+}
 
 
 .card h1{

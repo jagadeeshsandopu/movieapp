@@ -30,3 +30,31 @@ body {
  margin:15px;
  font-size: 20px;
 }
+.container button{
+ display: none;
+}
+
+@media (max-width:700px) {
+  .links{
+     display: none;
+  }
+  
+ .container button{
+     display:flex;
+     margin-right:10px;
+    }
+ 
+}
+#hidden{
+    position: absolute;
+    flex-direction: column;
+    right:0px;
+    top:40px;
+    width:100%;
+    color:white;
+    display: flex;
+    height:120px;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color:purple;
+   }
