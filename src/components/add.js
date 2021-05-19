@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import Resultcard from './resultcard';
+import SearchIcon from '@material-ui/icons/Search';
 import './add.css'
 
 const Add = () => {
@@ -19,7 +20,11 @@ const Add = () => {
 
    return(
         <div className="add">
-          <input className="search" type ="text" placeholder="Search a movie" value={searchedmovie} onChange={search} />
+          <div className="ser">
+           
+           <input className="search" type ="text" placeholder="Search a movie" value={searchedmovie} onChange={search} />
+           <button className="bn"><SearchIcon/></button>
+          </div>
           <ul className="list">
             {
              results.map((movie)=>(
