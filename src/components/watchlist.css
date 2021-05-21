@@ -4,7 +4,7 @@
     height: 10000px;
     box-sizing: border-box;
     position:relative;
-    
+    margin:0px
 }
 
 .watchlist h1{
@@ -27,12 +27,9 @@
 }
 .watchlist img{
     display: block;
-    margin-left:32px
+    margin-left:54px
 }
-.watchlist button{
-  background-color: green;
-  color:white;
-  margin:10px 3px;
-  border-radius: 10px;
+.watchlist Button{
+  margin:10px
 }
   

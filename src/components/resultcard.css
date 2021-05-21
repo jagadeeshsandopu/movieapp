@@ -1,26 +1,35 @@
 .card {
-    width :500px;
+    width :220px;
     display : flex;
     align-items: flex-start;
-    margin-bottom:15px;
+    margin:0px;
     margin-left:-40px;
-     
+    
 }
+
 img {
     border-radius: 10px;
+    
 }
 
 
 .card h1{
-    margin-left:40px;
+    margin-left:30px;
     font-family:'Times New Roman', Times, serif;
     color:darkred
 }
 
- #butt {
-    border-radius: 10px;
-    background-color: green;
-    color:white;
+ .thu Button {
     margin-left:-40px;
+    margin-top:10px;
     margin-bottom:50px
+}
+
+@media (max-width:800px){
+    .card{
+      flex-direction:column;
+    }
+    .card h1{
+     margin-left:0
+    }
 }

@@ -1,6 +1,7 @@
 import React,{useContext} from 'react';
 import {Globalcontext} from './context/globalstate'
 import './watchlist.css'
+import Button from '@material-ui/core/Button';
 
 const Watchlist = () => {
   const {watchlist,removemoviefunction,addtowatchedfunction,watched} = useContext(Globalcontext);
@@ -16,8 +17,8 @@ const Watchlist = () => {
       {watchlist.map(mov =>{
         return (<div className="img">
          <img src={`https://image.tmdb.org/t/p/w200${mov.poster_path}`}/>
-          <button onClick={() => removemoviefunction(mov.id)}>REMOVE MOVIE</button>
-          <button type="submit" onClick={() =>addtowatchedfunction(mov)}>ADD TO WATCHED</button>
+          <Button size="small" variant="contained" color="secondary" onClick={() => removemoviefunction(mov.id)}>REMOVE MOVIE</Button>
+          <Button size="small" variant="contained" color="secondary" type="submit" onClick={() =>addtowatchedfunction(mov)}>ADD TO WATCHED</Button>
         </div>)
       })}
      </div>
