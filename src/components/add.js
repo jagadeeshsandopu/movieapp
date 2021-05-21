@@ -22,8 +22,7 @@ const Add = () => {
    return(
         <div className="add">
           <div className="ser">
-           
-           <input className="search" type ="text" placeholder="Search a movie" value={searchedmovie} onChange={search} />
+           <input type ="text" placeholder="Search a movie" value={searchedmovie} onChange={search} />
            <button className="bn"><SearchIcon/></button>
           </div>
           <ul className="list">

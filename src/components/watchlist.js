@@ -13,7 +13,7 @@ const Watchlist = () => {
     return (
      <div className="watchlist">
       <h1>Watchlist</h1>
-      <h2>Movie Count : {watchlist.length}</h2>
+      
       {watchlist.map(mov =>{
         return (<div className="img">
          <img src={`https://image.tmdb.org/t/p/w200${mov.poster_path}`}/>
