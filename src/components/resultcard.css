@@ -2,7 +2,7 @@
     width :220px;
     display : flex;
     align-items: flex-start;
-    margin:auto
+    margin-left:0
 }
 
 img {
@@ -12,7 +12,9 @@ img {
 .thu{
  display:flex;
  flex-direction: column;
- align-items: center;
+ align-items: flex-start;
+ margin-left:25%;
+ 
 }
 
 .card h1{
@@ -33,5 +35,8 @@ img {
     }
     .card h1{
      margin-left:0
+    }
+    .thu{
+     margin-left:10%
     }
 }
