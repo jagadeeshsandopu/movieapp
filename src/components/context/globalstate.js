@@ -5,6 +5,7 @@ import Watched from '../watched';
 const initialstate ={
     watchlist: localStorage.getItem("watchlist") ? JSON.parse(localStorage.getItem("watchlist")) : [],
     watched:localStorage.getItem("watched") ? JSON.parse(localStorage.getItem("watched")) : [],
+    details:[]
 }
 
 const moviereducer = (state,action) =>{
@@ -26,6 +27,17 @@ const moviereducer = (state,action) =>{
          ...state,
          watched : [...state.watched , action.payload]
      }
+    case 'CHANGE_STATUS':
+     return {
+        ...state,
+         details:[action.payload]
+     }
+     case 'CHANGE':
+     return {
+         ...state,
+         details:[]
+     }
+
   default : return state;
  }
 }
@@ -44,11 +56,17 @@ export const Globalprovider = (props) =>{
     const addtowatchedfunction = (movie)=>{
         dispatch({type : 'ADD_TO_WATCHED',payload : movie})
     };
+    const showdetailsfunction=(movie) =>{
+        dispatch({type:"CHANGE_STATUS",payload : movie});
+    }
+    const change=() =>{
+        dispatch({type:"CHANGE"});
+    }
     useEffect(() => {
        localStorage.setItem("watchlist",JSON.stringify(state.watchlist));
        localStorage.setItem("watched",JSON.stringify(state.watched));
     },[state])
-    return ( <Globalcontext.Provider value={{watchlist:state.watchlist,watched:state.watched,addmoviefunction,removemoviefunction,addtowatchedfunction}}>
+    return ( <Globalcontext.Provider value={{watchlist:state.watchlist,watched:state.watched,addmoviefunction,removemoviefunction,addtowatchedfunction,showdetailsfunction,details:state.details,change}}>
       {props.children}
     </Globalcontext.Provider>);
 }

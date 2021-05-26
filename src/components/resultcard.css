@@ -17,10 +17,10 @@ img {
  
 }
 
-.card h1{
+.card h2{
     margin-left:30px;
     font-family:'Times New Roman', Times, serif;
-    color:black
+    color:white
 }
 
  .thu Button {
@@ -33,10 +33,11 @@ img {
     .card{
       flex-direction:column;
     }
-    .card h1{
+    .card h2{
      margin-left:0
     }
     .thu{
-     margin-left:10%
+     margin-left:12.5%
     }
+    
 }

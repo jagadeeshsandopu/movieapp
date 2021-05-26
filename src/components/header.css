@@ -7,7 +7,7 @@ body {
 
 .container {
  height : 60px;
- background-color:purple;
+ background-color:#413737;
  display: flex;
  justify-content: space-between;
  align-items: center;
@@ -15,7 +15,7 @@ body {
  right:0
 }
 .container h1{
-    color:white;
+    color:red;
     margin:15px;
 }
 .links {
@@ -59,6 +59,7 @@ body {
     height:120px;
     justify-content:space-evenly;
     align-items: flex-start;
-    background-color:purple;
-    
+    background-color:#413737;
+    z-index: 10;
+    opacity: 0.9;
    }

@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 
 const Watchlist = () => {
   const {watchlist,removemoviefunction,addtowatchedfunction,watched} = useContext(Globalcontext);
-  
+  console.log(watchlist);
   
    if(watchlist.length===0)
    {return <h1>Your watch list is empty</h1>}
@@ -15,6 +15,7 @@ const Watchlist = () => {
       <h1>Watchlist</h1>
       
       {watchlist.map(mov =>{
+        
         return (<div className="img">
          <img src={`https://image.tmdb.org/t/p/w200${mov.poster_path}`}/>
           <Button size="small" variant="contained" color="secondary" onClick={() => removemoviefunction(mov.id)}>REMOVE MOVIE</Button>
