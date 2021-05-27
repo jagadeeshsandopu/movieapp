@@ -25,10 +25,13 @@ const Add = () => {
   let q;
   let r;
   if(details.length>0)
-  {pp=details[0].poster_path;}
-
-  if(details.length>0)
-  {r=<CloseIcon onClick={change} className="close" />}
+  {pp=details[0].poster_path;
+   r=<CloseIcon onClick={change} className="close" />
+   if(details[0].overview.length>210)
+   {details[0].overview=details[0].overview.slice(0,200);
+    details[0].overview=details[0].overview.concat('....');
+   }
+  }
   
   if(details.length>0)
    {q=<img style={{height:"150px",marginTop:"40px",marginLeft:"5px"}} src={`https://image.tmdb.org/t/p/w200${pp}`}/>}
@@ -49,7 +52,10 @@ const Add = () => {
           </ul>
           <div className={details.length?"details":""} >
             {q}
-            <h2>{details.length?details[0].overview:""} </h2>
+            <div className={details.length?"headings":"" }  >
+             <h1>{details.length?details[0].title:""}</h1>
+             <h2>{details.length?details[0].overview:""} </h2>
+            </div>
             {r}
             
           </div>
